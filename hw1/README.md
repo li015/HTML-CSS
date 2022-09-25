@@ -1,1 +1,3 @@
-# Web Programming HW#1
+- anchor 的狀態控制項 :　游標 hover 到 anchor圖示，控制板顏色加深，暗示使用者可以點選。
+- 會議畫面下部的控制bar : checkbox 變色，以利使用者知道目前麥克風或視訊狀態。
+- 應該是用 flex-direction: grid，分隔出的側邊欄在不同視窗大小下，可以保持主畫面與側邊欄的分割。
