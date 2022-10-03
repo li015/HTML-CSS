@@ -23,7 +23,7 @@
     <script src="main.js"></script>
     <section class="MAIN_SPEAKING">
       <!-- Close the image -->
-      <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+      <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
 
       <!-- Expanded image -->
       <!-- <img id="expandedImg" style="width:100%"> -->
@@ -62,7 +62,7 @@
         </div>
    
         <div id="anchor_bottom" >
-            <h1 id="anchor_name">你</h1>
+            <h1 id="anchor_name"></h1>
         </div>
       
     </section>
@@ -71,8 +71,9 @@
     <section class="ATTENDANTS">
       <div class="friends">
         <div class="ATTENDANT" id="friend" >
-          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <!-- <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span> -->
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="ME" id="img3" src="resources\unnamed.png" alt="You " onclick="anchor_att(this);">
           <h1 id="attendee_name">
             Marceline
@@ -82,7 +83,9 @@
         <div class="ATTENDANT" id="friend" >
           <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="fit-picture" id="img3" src="resources\elecguitar.jfif" alt="Electrical Guitar" onclick="anchor_att(this);">
+            
           <h1 id="attendee_name">
             Electrical Guitar
           </h1>
@@ -91,6 +94,7 @@
         <div class="ATTENDANT" id="friend"> 
           <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="fit-picture" id="img3" src="resources\bass.jpg" alt="Bass" onclick="anchor_att(this);">
             <h1 id="attendee_name">
             Bass
@@ -99,6 +103,7 @@
         <div  class="ATTENDANT"id="friend">
           <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="fit-picture" id="img3" src="resources\vocal.jfif" alt="Vocal"  onclick="anchor_att(this);">
           <h1 id="attendee_name">
             Vocal
@@ -107,6 +112,7 @@
         <div class="ATTENDANT" id="friend"> 
           <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="fit-picture" id="img3" src="resources\frum.jpg" alt="Drum"  onclick="anchor_att(this);">
             <h1 id="attendee_name">
               Drum
@@ -115,6 +121,7 @@
         <div class="ATTENDANT" id="friend">
           <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
             <img src="resources\mute.png" id="img2" class="attendee_mic" alt="mic">
+            <img class="attendant_control"  id="img2" style="width:80px; height:30px;" alt="attendant_control" src="resources\attendant.png">
             <img class="fit-picture" id="img3" src="resources\kb.png" alt="Keyboard"  onclick="anchor_att(this);">
             <h1 id="attendee_name">
               Keyboard
@@ -127,7 +134,7 @@
       <div class="control-bar__total">
         <span id="time-code">下午 3:57 </span>
         <span id="meeting code">
-          | HW1-wp1111
+          | HW2-wp1111
         </span> 
         <input type="text" id="myInput" placeholder="新增與會者...">
         <span onclick="newElement()" class="addBtn">Add</span>

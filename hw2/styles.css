@@ -243,6 +243,7 @@
     flex-wrap: no-wrap; 
         flex-direction: row;
         align-items: center;
+        bottom:25px;
 }
 
     #attendee_name{
@@ -251,11 +252,30 @@
         flex-direction: row;
         justify-content: flex-start;
         position: relative;
-        font-size: 18px;
+        font-size: 14px;
         left: 12px;
+        bottom:12px;
     color: white;
     }
+    .attendant_control{
+      width:125px; 
+      height:45px; 
+      opacity:0.1;
+      visibility:visible;
+      position: absolute;
+      z-index: 1;
+      display: flex;
+      align-self: center;
+      flex-wrap: wrap;
+  }
 
+
+  .attendant_control:hover{
+    opacity: 1;
+}
+.friend:hover .attendant_control{
+    visibility: visible;
+}
 /* sidebar */
 
 
@@ -463,9 +483,9 @@ ul li.checked {
 
   /* Closable button inside the image */
 .closebtn {
-    position: relative;
-    top: 10px;
-    right: 15px;
+    position:relative;
+    top: 25px;
+    left: 15px;
     color: white;
     font-size: 35px;
     cursor: pointer;

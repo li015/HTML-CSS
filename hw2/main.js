@@ -116,6 +116,9 @@ function newElement() {
   }
 }
 
+//現在時間
 
-
-  var timecode = Date.now();
+  // var timecode = Date.now();
+  // let webtime = document.getElementByID('time-code')
+  // var txt = document.createTextNode(console.log(timecode));
+  // webtime.appendChild(txt);
