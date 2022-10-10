@@ -1,10 +1,11 @@
 import React from 'react'
 
 
-class Todoappfooter extends React.Component() {
+class Todoappfooter extends React.Component{
 
-      render () {
-    if (this.props.count !== 0){
+
+    render () {
+      if (this.props.count > 0){
     return (
         <footer className='todo-app__footer'>
         <div className='todo-app__total'>{this.props.count} left</div>
@@ -18,6 +19,13 @@ class Todoappfooter extends React.Component() {
     </footer>
     )
     }
+    else{
+    return(
+      <div>
+
+      </div>
+    )
       }
     }
-    export default Todoappfooter;
+  }
+  export default Todoappfooter;

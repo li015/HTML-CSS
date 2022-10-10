@@ -2,6 +2,8 @@ import './App.css';
 import './styles.css'
 import React, {Component} from 'react';
 import Todoapplist from './containers/Todoapplist'
+//import Todoappfooter from '../src/containers/Todoappfooter'
+
 
 class Todolist extends Component{
   constructor(props) {
@@ -11,7 +13,7 @@ class Todolist extends Component{
   handleCondition = (e) => {
     this.setState({ condition: e})
   }
-  
+
   render(){
     return(
       
@@ -22,7 +24,7 @@ class Todolist extends Component{
         </header>
         <Todoapplist/>
        
-          
+        {/* <Todoappfooter count="0"/> */}
         
       </div> 
 

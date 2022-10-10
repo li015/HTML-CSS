@@ -1,22 +1,14 @@
 import React from 'react'
 //import Todoappitem from '../components/Todoappitem'
-//import Todoappfooter from './Todoappfooter'
+import Todoappfooter from './Todoappfooter'
 import x from '../components/x.png'
 
 function Todoapplist() {
 
- const [input, setinput]=React.useState("");
+const [input, setinput]=React.useState("");
+const [isnotActive, setIsActive] = React.useState(false);
 const [list, getList]=React.useState([]);
 
-  // const handleSubmit =() =>{
-  //     getList((l)=>[...l,{taskName} ])
-  //       console.log(list)
-  //       console.log(input)
-  //       setinput({askName:""})
-  //   }
-
-    //   value={Task}
-        //   onChange={(e)=>addTask(e.target.value)}
     const handleChange = (event) => {
       setinput(event.target.value)
     } 
@@ -25,12 +17,57 @@ const [list, getList]=React.useState([]);
       if (event.key === 'Enter') {
         //console.log(input)
         setinput("")
-        getList([...list,{input} ])
+        getList([...list,{input, isnotActive} ])
         console.log(list)
         
       }
     }
-  
+
+// function handleCheck (ind)  {
+//     //setIsActive(current => !current);
+//     //console.log(isnotActive)
+//     //setIsActive("")
+//     const newList = list.map((c, i) => {
+//         if(i===ind){
+//           const updatedItem = {
+//           ...c,
+//           isnotActive: !c.isnotActive,
+//         }
+//         return updatedItem
+//       }
+      
+//           return c;
+          
+//     });
+//     getList(newList);
+//   }
+
+const handleCheck =(ind) => {
+  setIsActive(current => !current);
+  //console.log(isnotActive)
+  //setIsActive("")
+  const newList = list.map((c, i) => {
+      if(i===ind){
+        const updatedItem = {
+        ...c,
+        isnotActive: !isnotActive,
+      }
+      console.log(updatedItem)
+      return updatedItem
+    }
+    
+        return c;
+        
+  });
+  getList(newList);
+  console.log(list);
+}
+    
+// function toggle() {
+//   setIsActive(!isnotActive);
+// }
+
+
     return (
         <div>
           <section className='todo-app__main'>
@@ -48,31 +85,37 @@ const [list, getList]=React.useState([]);
             return(
             <li className='todo-app__item'>
                   <div className='todo-app__checkbox'>
-                      <input id={ind} type="checkbox"/>
+                      <input id={ind} type="checkbox" onClick={() =>handleCheck(ind)}/>
                       <label for={ind}></label>
                   </div>
-                  <h1 className="todo-app__item-detail" >
+                  {/* <h1 className="todo-app__item-detail"  > */}
+                  <h1 className='todo-app__item-detail'
+                      style={taskname.isnotActive ?  { textDecoration:'line-through',opacity: 0.5 } : {}}
+                   >
+                  {/* <h1 className={isnotActive ? 'todo-app__item-detail':''} > */}
                       {taskname.input}
                   </h1>
                   
                   <img className="todo-app__item-x" src={x} alt="remove"></img>
               </li>
+              
               )
             }
           )
         }
       </ul>
-   
-              <footer className='todo-app__footer'>
-                <div className='todo-app__total'>{list.length} left</div>
+      <Todoappfooter count={list.length}/>
+             {/* <footer className='todo-app__footer'>
+                
+                 <div className='todo-app__total'>{list.length} left</div>
                 <ul className='todo-app__view-buttons'>
                     <button>All</button>
                     <button>Active</button>
                     <button>Complete</button> 
                 
                 </ul>
-                <div className='todo-app__clean'>Clear complete</div>
-            </footer>
+                <div className='todo-app__clean'>Clear complete</div> 
+            </footer>*/}
       </div>
     );
   }
