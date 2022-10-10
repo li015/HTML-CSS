@@ -1,11 +1,17 @@
 import './App.css';
 import './styles.css'
 import React, {Component} from 'react';
-import Todoappinput from './components/Todoappinput'
+import Todoapplist from './containers/Todoapplist'
 
 class Todolist extends Component{
-
-
+  constructor(props) {
+    super(props);
+    this.state = { condition: 'Active' };
+  }
+  handleCondition = (e) => {
+    this.setState({ condition: e})
+  }
+  
   render(){
     return(
       
@@ -14,7 +20,7 @@ class Todolist extends Component{
         <header className="todo-app__header">
           <h1 className='todo-app__title '>todos</h1>
         </header>
-        <Todoappinput/>
+        <Todoapplist/>
        
           
         
@@ -25,26 +31,3 @@ class Todolist extends Component{
 }
 export default Todolist;
 
-
-/* <div className="todo-app__root">
-
-<header className="todo-app__header">
-  </header>
-  
-  <section className='todo-app__main'>
-    <input className='todo-app__input'>what needs to be done?</input>
-      <ul className='todo-app__list'>
-        <li className='todo-app__item'>
-        
-        </li>
-      </ul>
-  </section>
-
-
-<footer className='todo-app__footer'>
-  <div className='todo-app__total'>2 left</div>
-  <ul className='todo-app__view-buttons'> all</ul>
-  <div className='todo-app__clean'>Clear complete</div>
-</footer>
-<h1 > 100</h1>
-</div> */

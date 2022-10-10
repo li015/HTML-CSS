@@ -115,7 +115,7 @@ input[type='checkbox'] {
   cursor: pointer;
   position: absolute;
   top: 5px;
-  left: 5px;
+  left: 4px;
     z-index: 1;
 }
 
@@ -124,6 +124,8 @@ input[type='checkbox'] {
   }
 .todo-app__checkbox input[type='checkbox']:checked + label {
     background: #26ca299b;
+    text-decoration: line-through; 
+    opacity: 0.5;
 }
 
 .todo-app__item-detail {
@@ -132,8 +134,21 @@ input[type='checkbox'] {
     width: 90%;
     transition: opacity 0.3s;
     height: 100%;
+    
 
 }
+
+.todo-app__item-detail-done {
+    font-weight: 300;
+    overflow-wrap: break-word;
+    width: 90%;
+    transition: opacity 0.3s;
+    height: 100%;
+    text-decoration: line-through; 
+    opacity: 0.5;
+}
+
+
 
 .todo-app__footer {
     width: 100%;
