@@ -32,6 +32,7 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
     const freshBoard = () => {
         const newBoard = createBoard(boardSize, mineNum);
         // Basic TODO: Use `newBoard` created above to set the `Board`.
+        console.log(newBoard)
         // Hint: Read the definition of those Hook useState functions and make good use of them.
 
     }
@@ -77,7 +78,14 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
                 {/* Basic TODO: Implement Board 
                 Useful Hint: The board is composed of BOARDSIZE*BOARDSIZE of Cell (2-dimention). So, nested 'map' is needed to implement the board.
                 Reminder: Remember to use the component <Cell> and <Dashboard>. See Cell.js and Dashboard.js for detailed information. */}
-                
+                <div className="boardContainer">
+                    {/* {
+                        board.map()
+                    } */}
+                </div>
+
+
+
             </div>
         </div>
     );
