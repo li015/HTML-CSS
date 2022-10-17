@@ -37,15 +37,10 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         console.log(newBoard.board.length)
         console.log(newBoard.mineLocations)
         // Hint: Read the definition of those Hook useState functions and make good use of them.
-        setBoard(()=>{
-            return newBoard.board.map(
-                (id,item)=>{
-                    
-                }
-            )) 
+        //setBoard((e)=>{ return [ ...e.slice(0, index), {...prevTeams[index], players: [...prevTeams[index].players, "c"] }, ...prevTeams.slice(index+1)];})
         setNonMineCount(() => (newBoard.board.length*newBoard.board.length))
         setMineLocations( newBoard.mineLocations)
-        setBoard([...board,{row: newBoard.board.x, col:newBoard.board.y, item:newBoard.board.value}])
+        setBoard([newBoard.board])
         console.log(board)
     }
 
