@@ -41,15 +41,12 @@ const MineSweeper = () => {
             {/* Basic TODO: `HomePage` and `Board` will switch based on the mode of `startGame`. If `startGame` is true, show `Board`; else show `HomePage` */}
             
             {
-                startGame === 'true'?(
-                <HomePage/>
-                ):(startGame === 'false'?(
-                <Board />
-                );
-                )
-            
+            startGame === false?(
+                    <HomePage startGameOnClick={startGameOnClick}/>):(
+                    <Board  boardSize={boardSize} mineNum={mineNum}/>)
             }
-            // {/* Advanced TODO: pass all parameters into `Board` and `HomePage`*/}
+
+            {/* Advanced TODO: pass all parameters into `Board` and `HomePage`*/}
         </div>
     );
 }

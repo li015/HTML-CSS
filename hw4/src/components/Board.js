@@ -32,9 +32,21 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
     const freshBoard = () => {
         const newBoard = createBoard(boardSize, mineNum);
         // Basic TODO: Use `newBoard` created above to set the `Board`.
-        console.log(newBoard)
+        //console.log(newBoard.board.length)
+        console.log(newBoard.board)
+        console.log(newBoard.board.length)
+        console.log(newBoard.mineLocations)
         // Hint: Read the definition of those Hook useState functions and make good use of them.
-
+        setBoard(()=>{
+            return newBoard.board.map(
+                (id,item)=>{
+                    
+                }
+            )) 
+        setNonMineCount(() => (newBoard.board.length*newBoard.board.length))
+        setMineLocations( newBoard.mineLocations)
+        setBoard([...board,{row: newBoard.board.x, col:newBoard.board.y, item:newBoard.board.value}])
+        console.log(board)
     }
 
     const restartGame = () => {
@@ -54,6 +66,7 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         // Basic TODO: Right Click to add a flag on board[x][y]
         // Remember to check if board[x][y] is able to add a flag (remainFlagNum, board[x][y].revealed)
         // Update board and remainFlagNum in the end
+        setRemainFlagNum()
 
     };
 
@@ -65,7 +78,7 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         // Hint: If `Hit the mine`, check ...?
         //       Else if `Reveal the number cell`, check ...?
         // Reminder: Also remember to handle the condition that after you reveal this cell then you win the game.
-
+    
     };
 
     return (
@@ -79,13 +92,30 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
                 Useful Hint: The board is composed of BOARDSIZE*BOARDSIZE of Cell (2-dimention). So, nested 'map' is needed to implement the board.
                 Reminder: Remember to use the component <Cell> and <Dashboard>. See Cell.js and Dashboard.js for detailed information. */}
                 <div className="boardContainer">
-                    {/* {
-                        board.map()
-                    } */}
+                    {
+                        
+                        board.map((row)=>{
+                            
+                            <div id={'row'+row.id} style={{display:'flex'}} key={row.id}>
+                                {
+                                    row.map( (item)=> {
+                                        return(
+                                            <div key={item.x * row.length + item.y}>
+                                            <Cell rowIdx={item.x} colIdx={item.y}  updateFlag={updateFlag} revealCell={revealCell} />
+                                        
+                                            </div>
+                                        )
+                                        }
+                                    )
+                                }
+                            </div>
+                        }           
+                        
+                        )
+                    }
+                          
+                    
                 </div>
-
-
-
             </div>
         </div>
     );

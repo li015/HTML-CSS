@@ -22,7 +22,7 @@ const HomePage = ({ startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNu
     <div className='HomeWrapper'>
       <p className='title'>MineSweeper</p>
       {/* Basic TODO:  Implemen start button */}
-      <button className="btn">Start Game</button>
+      <button className="btn" onClick={startGameOnClick}>Start Game</button>
 
       {/* Advanced TODO: Implementation of Difficult Adjustment
                 Useful Hint: <input type = 'range' min = '...' max = '...' defaultValue = '...'> 
