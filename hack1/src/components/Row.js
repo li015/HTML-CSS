@@ -16,15 +16,15 @@ const Row = ({ guess, rowIdx }) => {
             {/* TODO 3: Row Implementation -- Row */}
             {/* ↓ Default row, you should modify it. ↓ */}
             <div className='Row-wrapper'>
-                <div className='Row-wordbox'> A
+                <div className='Row-wordbox yellow'> A
                 </div>
-                <div className='Row-wordbox'>B</div>
+                <div className='Row-wordbox green'>B</div>
                 <div className='Row-wordbox'>C</div>
-                <div className='Row-wordbox'>D</div>
+                <div className='Row-wordbox gray'>D</div>
                 <div className='Row-wordbox'>E</div>
             </div>
             {/* ↑ Default row, you should modify it. ↑ */}
-            
+
         </div>
     )
 }

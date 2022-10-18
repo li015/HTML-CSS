@@ -22,6 +22,7 @@ const Wordle = ({ solution }) => {
     
     useEffect(() => {
         window.addEventListener('keyup', handleKeyup);
+        
             if (isCorrect) {
                 setTimeout(() => {
                     // TODO 6: Implementation for the result of the game
@@ -41,7 +42,7 @@ const Wordle = ({ solution }) => {
         return () => window.removeEventListener('keyup', handleKeyup);
     }, [handleKeyup])
 
-
+printTest()
     return (
         <div className='Wordle-container'>
             {/* TODO 6: Implementation for the result of the game */}

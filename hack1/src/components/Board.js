@@ -17,9 +17,17 @@ const Board = ({ turn, guesses, curGuess }) => {
         <div className="Board-container">
             {/* TODO 2-2: show 6 rows (map function is recommended) and defined row's key.
                 Hint: Use `CurRow` instead of `Row` when you are passing `curGuess` into it. */}
-            
             <Row guesses={guesses}/>
+            <Row guesses={guesses}/>
+            <Row guesses={guesses}/>
+            <Row guesses={guesses}/>
+            {
+                guesses[4]?(<Row guesses={guesses}/>
+
+                ):(<CurRow curGuess={curGuess}/>)
+            }
             <CurRow curGuess={curGuess}/>
+            
         </div>
     )
 };
