@@ -1,6 +1,6 @@
 import axios from 'axios'
 const instance =
-axios.create({ baseURL: 'http://localhost:4000/api/guess'})
+axios.create({ baseURL: 'http://localhost:4000/api'})
 
 const startGame = async () => {
   const { data: { msg } }
@@ -8,12 +8,9 @@ const startGame = async () => {
   return msg
 }
 const guess = async(number) => {
-try{
-     const { data: { msg } }
-    = await instance.get('/guess', { params:{number}})
-       return msg
-     }
- catch (error){console.log(error.response)}
+  const { data: { msg } } = await instance.get
+  ('/guess', { params: { number } })
+return msg
 }
 
 const restart = async () => {

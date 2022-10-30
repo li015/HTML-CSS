@@ -4,14 +4,10 @@ import express from 'express'
   const app = express()
   // init middleware
   app.use(cors())
-  // define routes
   
-  app.use('/api/guess', guessRoute)
+  // define routes 
+  app.use('/api', guessRoute)
 
-  app.get('/', (req, res) => {
-    res.send('sis!')
-  })
-  
   // define server
   const port = process.env.PORT || 4000
   app.listen(port, () => {

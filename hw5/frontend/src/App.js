@@ -11,12 +11,12 @@ function App() {
   const [status, setStatus] = useState('')
 /* */
   const handleStart = async () =>{
-    //setHasStarted(true)
+    setHasStarted(true)
     await startGame()
     
   }
   const handleGuess = async () => {
-    console.log(number)
+    //console.log(number)
     const response = await guess(number)
       if (response === 'Equal') {
         setHasWon(true)
