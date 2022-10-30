@@ -28,12 +28,15 @@ function App() {
     }
     const handleRestart = async () =>{
       setHasStarted(false)
+      setHasWon(false)
+      setNumber('')
+      setStatus('')
       await restart()
     }
 /* */
   const startMenu =
     <div>
-  <button onClick = {handleStart}
+  <button className='start' onClick = {handleStart}
       // someFunctionToBackend; and setHasStarted
     > start game </button>
     </div>
@@ -44,7 +47,7 @@ const gameMode =
   <input   type={"text"}// Get the value from input
    onChange={(e)=>{setNumber(e.target.value)}}
   ></input>
-  <button  // Send number to backend
+  <button className='guess' // Send number to backend
     onClick={handleGuess}
     disabled={!number} >guess!
   </button> 
@@ -54,7 +57,7 @@ const gameMode =
 const winningMode = (
     <>
       <p>you won! the number was {number}.</p>
-      <button  onClick={handleRestart}
+      <button className='restart' onClick={handleRestart}
       // Handle restart for backend and frontend
       >restart</button>
   </>

@@ -1,10 +1,9 @@
-
+var ansNum
 function genNumber(){
-    var number = 1 + (100
+    var number = 1 + Math.floor(100
         * Math.random());
-        return number
+        ansNum =number
+        console.log(ansNum)
+        return ansNum
 }
-
-
-
-export default genNumber
+export {genNumber, ansNum}
