@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { guess, startGame, restart } from './axios'
 
 function App() {
@@ -10,18 +10,30 @@ function App() {
   const [number, setNumber] = useState('')
   const [status, setStatus] = useState('')
 /* */
+  const handleStart = async () =>{
+    //setHasStarted(true)
+    await startGame()
+    
+  }
   const handleGuess = async () => {
+    console.log(number)
     const response = await guess(number)
-      if (response === 'Equal') setHasWon(true)
+      if (response === 'Equal') {
+        setHasWon(true)
+      }
       else {
         setStatus(response)
         setNumber('')
       }
     }
+    const handleRestart = async () =>{
+      setHasStarted(false)
+      await restart()
+    }
 /* */
   const startMenu =
     <div>
-  <button onClick = { ()=>setHasStarted(true)}
+  <button onClick = {handleStart}
       // someFunctionToBackend; and setHasStarted
     > start game </button>
     </div>
@@ -29,17 +41,21 @@ function App() {
 const gameMode = 
   <>
   <p>Guess a number between 1 to 100</p>
-  <input   // Get the value from input
+  <input   type={"text"}// Get the value from input
+   onChange={(e)=>{setNumber(e.target.value)}}
   ></input>
   <button  // Send number to backend
     onClick={handleGuess}
-  disabled={!number} >guess!</button> <p>{status}</p>
+    disabled={!number} >guess!
+  </button> 
+  <p>{status}</p>
   </>
 
 const winningMode = (
     <>
       <p>you won! the number was {number}.</p>
-      <button  // Handle restart for backend and frontend
+      <button  onClick={handleRestart}
+      // Handle restart for backend and frontend
       >restart</button>
   </>
 )
